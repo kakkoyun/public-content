@@ -1,0 +1,228 @@
+{
+  "main": {
+    "id": "919fbbfd1cf5a545",
+    "type": "split",
+    "children": [
+      {
+        "id": "f9c76e9c6be5ccac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "73e95cc034456018",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "presentations/Profiling Python with eBPF.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Profiling Python with eBPF"
+            }
+          }
+        ]
+      },
+      {
+        "id": "11f6bf3d30d3dc91",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9551e868dbada072",
+            "type": "leaf",
+            "state": {
+              "type": "reveal-preview-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Slide Preview"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e96415e44260f602",
+    "type": "split",
+    "children": [
+      {
+        "id": "14aa6b8213d58923",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cde07dd7cad2f99f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "d766996008029480",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2ed1e405774aa75f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e298d858275d4bb0",
+    "type": "split",
+    "children": [
+      {
+        "id": "4d54021b53a4a2c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "729476fa909c4810",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "presentations/FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis"
+            }
+          },
+          {
+            "id": "0395806f4bb9e2a5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "presentations/FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis"
+            }
+          },
+          {
+            "id": "7ea208ecfec6cae6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "38ca9862d8301ed3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "presentations/FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "publish:Publish changes...": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-advanced-slides:Show Slide Preview": false
+    }
+  },
+  "active": "73e95cc034456018",
+  "lastOpenFiles": [
+    "templates/tpl-basic-white.md",
+    "presentations/Profiling Python with eBPF.md",
+    "templates/tpl-basic.md",
+    "templates/tpl-basic-joint-talk.md",
+    "templates/tpl-polar-signals-two-column-graphics.md",
+    "templates/tpl-polar-signals-basic-white.md",
+    "templates/tpl-polar-signals-basic.md",
+    "templates/tpl-basic copy.md",
+    "presentations/FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis.md",
+    "presentations/Berlin DevOps Meetup 2024022 - Modernizing CICD Pipelines.md",
+    "notes/Presentation Snippets.md",
+    "notes/Berlin DevOps/aweris - Blog post.md",
+    "notes/Berlin DevOps/TODO.md",
+    "notes/Berlin DevOps",
+    "media/perf_events_map.png",
+    "notes/FOSDEM24 - Python/Parca Agent Code Snippets.md",
+    "media/stack.png",
+    "media/unsymbolized_stack.png",
+    "posts/Profiling Python and Ruby using eBPF.md",
+    "media/python_discussion_exported_qrcode_image_600.png",
+    "notes/FOSDEM24 - Python/cpython Code Snippets.md",
+    "media/promio.png",
+    "media/parcadev.png",
+    "media/thanosio.png",
+    "notes/FOSDEM24 - Python/Links.md",
+    "notes/FOSDEM24 - Python",
+    "media/slides_exported_qrcode_image_600.png",
+    "media/twitter_exported_qrcode_image_600.png",
+    "media/github_exported_qrcode_image_600.png",
+    "media",
+    "templates",
+    "notes",
+    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/menu/README.md",
+    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/chalkboard/README.md",
+    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/chart/README.md",
+    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/customcontrols/README.md",
+    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/menu/CONTRIBUTING.md",
+    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/math/mathjax/output/chtml/fonts/woff-v2",
+    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/math/mathjax/input/mml/extensions",
+    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/math/mathjax/input/tex/extensions",
+    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/math/mathjax/output/chtml/fonts",
+    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/math/mathjax/output/svg/fonts"
+  ]
+}
