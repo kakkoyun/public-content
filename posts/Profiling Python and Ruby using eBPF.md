@@ -14,7 +14,7 @@ Profiling interpreted code comes with its unique set of complexities, but simila
 
 > We've written more on our approach for profiling compiled programs without frame-pointers with low overhead: 👉 [DWARF-based Stack Walking Using eBPF](https://www.polarsignals.com/blog/posts/2022/11/29/dwarf-based-stack-walking-using-ebpf)
 
-https://pprof.me/4e5957b/embed/
+<https://pprof.me/4e5957b/embed/>
 
 _Interpreters_ are programs that read and execute code. To understand how they work, we must grasp two key components: _runtimes_ and _abstract stacks_. Runtimes manage the program's lifecycle, including code execution, memory management, and system interaction. Abstract stacks, on the other hand, are data structures used by interpreters to track variables and control flow, facilitating code execution by managing data storage and retrieval.
 
@@ -28,7 +28,7 @@ All the runtime data for Python is stored in a struct called `PyRuntimeState`. T
 
 Let's have a look at these structs:
 
-https://github.com/python/cpython/blob/8c071373f12f325c54591fe990ec026184e48f8f/Include/internal/pycore_interp.h#L42-L209
+<https://github.com/python/cpython/blob/8c071373f12f325c54591fe990ec026184e48f8f/Include/internal/pycore_interp.h#L42-L209>
 
 The code is heavily omitted for brevity. You can check the full source code from the links above.
 The key takeaway here is that we can use these structs to read the abstract stack data from memory. And by reading some of this data, we can construct a stack trace.
@@ -41,7 +41,7 @@ To start unwinding, we need to find the address of the first frame in the abstra
 
 Let's have a look at these structs:
 
-https://github.com/python/cpython/blob/2d4865d775123e8889c7a79fc49b4bf627176c4b/Include/cpython/pystate.h#L64-L195
+<https://github.com/python/cpython/blob/2d4865d775123e8889c7a79fc49b4bf627176c4b/Include/cpython/pystate.h#L64-L195>
 
 For Python, it is straightforward to find the address of the current frame. Its name is quite obvious!
 
@@ -56,7 +56,7 @@ Aha, it looks like we found what we are looking for `rb_control_frame_t *cfp;` �
 
 Let's quickly have a look at these structs as well:
 
-https://github.com/python/cpython/blob/4227bfa8b273207a2b882f7d69c8ac49c3d2b57d/Include/internal/pycore_frame.h#L53-L77
+<https://github.com/python/cpython/blob/4227bfa8b273207a2b882f7d69c8ac49c3d2b57d/Include/internal/pycore_frame.h#L53-L77>
 
 Now, we have all the addresses we need to unwind the abstract stack. We can start from the current frame and follow the pointers to the previous frames. We can do this until we reach the end of the abstract stack. The pseudo-code for this would look like this:
 
@@ -81,11 +81,11 @@ Let's start with finding the `PyRuntimeState` struct in the memory. We can do th
 
 ```shell
 ❯ ldd /usr/bin/python3.11
-	linux-vdso.so.1 (0x00007ffeca9e2000)
-	libpython3.11.so.1.0 => /usr/lib/libpython3.11.so.1.0 (0x00007fe6eaa00000)
-	libc.so.6 => /usr/lib/libc.so.6 (0x00007fe6ea81e000)
-	libm.so.6 => /usr/lib/libm.so.6 (0x00007fe6eb06f000)
-	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007fe6eb18e000)
+ linux-vdso.so.1 (0x00007ffeca9e2000)
+ libpython3.11.so.1.0 => /usr/lib/libpython3.11.so.1.0 (0x00007fe6eaa00000)
+ libc.so.6 => /usr/lib/libc.so.6 (0x00007fe6ea81e000)
+ libm.so.6 => /usr/lib/libm.so.6 (0x00007fe6eb06f000)
+ /lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007fe6eb18e000)
 ```
 
 The executable linked against the `libpython3.11.so.1.0` library. Let's check the symbols in this library:
@@ -305,15 +305,17 @@ Now, we can use this knowledge to focus on the hotspots of our program and optim
 
 > By the way, the following embedded profiles are interactive. Feel free to poke around!
 
-https://pprof.me/e613728/embed/
+<https://pprof.me/e613728/embed/>
+
 ## Merging the stacks
 
 There is something we have yet to talk about. How do we merge the interpreted code stack traces with the native code stack traces?
+
 ### Interpreted stack
 
 The interpreted code execution is not the only thing that is happening in the program. There are also native code and kernel code executions. We have already seen these traces in the beginning of the blog post. Let's remember, how _native stack_ and _kernel stack_ looks like:
 
-https://pprof.me/c06fdcb/embed/
+<https://pprof.me/c06fdcb/embed/>
 
 We need to find a way to match the interpreted code stack traces with the native code stack traces. This is a challenging task. We need to find the correct frame in the native code stack trace corresponding to the interpreted code stack trace. One reason behind that, in addition to native stack frames that, is for interpreting the code, we would see native stack frames that the interpreted code potentially called.
 
@@ -347,7 +349,7 @@ The currently [supported Ruby (MRI) versions](https://github.com/parca-dev/parca
 
 **3.x:** 3.0.0, 3.0.4, 3.1.2, 3.1.3, 3.2.0, 3.2.1
 
-## Give us feedback!
+## Give us feedback
 
 We look forward to your feedback and questions as you explore these new capabilities. For this purpose, we created a dedicated GitHub discussion on the Parca Agent repo. Please check out the following links below 👇
 
@@ -362,4 +364,3 @@ We want to explore to add **more runtimes and implementations**! Our tools must 
 We're not stopping at just Python and Ruby - we'll be adding support for even **more programming languages** so you can use our profiling tools for all your favorite projects.
 
 Stay tuned for these updates, and as always, we'd love to hear your thoughts and experiences - so don't hesitate to share them with us!
-

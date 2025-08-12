@@ -4,31 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "f9c76e9c6be5ccac",
+        "id": "a18b66637e9d9147",
         "type": "tabs",
         "children": [
           {
-            "id": "73e95cc034456018",
+            "id": "5dd1205d715523c9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "presentations/Profiling Python with eBPF.md",
+                "file": "presentations/GopherCon UK 2025 - Unleashing the Go Toolchain.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Profiling Python with eBPF"
+              "title": "GopherCon UK 2025 - Unleashing the Go Toolchain"
             }
           }
         ]
       },
       {
-        "id": "11f6bf3d30d3dc91",
+        "id": "0958e69604ebde60",
         "type": "tabs",
         "children": [
           {
-            "id": "9551e868dbada072",
+            "id": "3b18d4c03311243b",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
@@ -56,7 +56,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -93,7 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 470.5
   },
   "right": {
     "id": "e298d858275d4bb0",
@@ -155,13 +156,55 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "presentations/FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis.md"
+                "file": "presentations/GopherCon UK 2025 - Unleashing the Go Toolchain.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis"
+              "title": "Outline of GopherCon UK 2025 - Unleashing the Go Toolchain"
+            }
+          },
+          {
+            "id": "1b8cee05b9d8ac7a",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "notes/GopherCon UK/Resources.md"
+              },
+              "icon": "lucide-file-signature",
+              "title": "Footnotes"
+            }
+          },
+          {
+            "id": "700fca7469956cd9",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "80362e57993cf109",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "presentations/GopherCon UK 2025 - Unleashing the Go Toolchain.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties for GopherCon UK 2025 - Unleashing the Go Toolchain"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -173,56 +216,61 @@
       "publish:Publish changes...": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-advanced-slides:Show Slide Preview": false
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "mermaid-tools:Open Mermaid Toolbar": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "73e95cc034456018",
+  "active": "5dd1205d715523c9",
   "lastOpenFiles": [
-    "templates/tpl-basic-white.md",
-    "presentations/Profiling Python with eBPF.md",
-    "templates/tpl-basic.md",
-    "templates/tpl-basic-joint-talk.md",
-    "templates/tpl-polar-signals-two-column-graphics.md",
-    "templates/tpl-polar-signals-basic-white.md",
-    "templates/tpl-polar-signals-basic.md",
-    "templates/tpl-basic copy.md",
-    "presentations/FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis.md",
-    "presentations/Berlin DevOps Meetup 2024022 - Modernizing CICD Pipelines.md",
-    "notes/Presentation Snippets.md",
-    "notes/Berlin DevOps/aweris - Blog post.md",
-    "notes/Berlin DevOps/TODO.md",
-    "notes/Berlin DevOps",
-    "media/perf_events_map.png",
-    "notes/FOSDEM24 - Python/Parca Agent Code Snippets.md",
-    "media/stack.png",
-    "media/unsymbolized_stack.png",
-    "posts/Profiling Python and Ruby using eBPF.md",
-    "media/python_discussion_exported_qrcode_image_600.png",
-    "notes/FOSDEM24 - Python/cpython Code Snippets.md",
-    "media/promio.png",
-    "media/parcadev.png",
-    "media/thanosio.png",
-    "notes/FOSDEM24 - Python/Links.md",
-    "notes/FOSDEM24 - Python",
-    "media/slides_exported_qrcode_image_600.png",
-    "media/twitter_exported_qrcode_image_600.png",
-    "media/github_exported_qrcode_image_600.png",
-    "media",
-    "templates",
-    "notes",
-    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/menu/README.md",
-    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/chalkboard/README.md",
-    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/chart/README.md",
-    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/customcontrols/README.md",
-    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/menu/CONTRIBUTING.md",
-    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/math/mathjax/output/chtml/fonts/woff-v2",
-    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/math/mathjax/input/mml/extensions",
-    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/math/mathjax/input/tex/extensions",
-    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/math/mathjax/output/chtml/fonts",
-    "export/FOSDEM24 - Profiling Python with eBPF - A New Frontier in Performance Analysis/plugin/math/mathjax/output/svg/fonts"
+    "inspiration/gc2024/presentation.md",
+    "inspiration/gc2024/presentation-edited.md",
+    "CLAUDE.md",
+    "inspiration/gc2024/toolexec-graph.md",
+    "inspiration/gc2024/toolexec-graph-3.md",
+    "inspiration/gc2024/toolexec-graph-2a.md",
+    "inspiration/gc2024/toolexec-graph-2.md",
+    "inspiration/Orchestrion/docs/dd-trace-go/v2/_index.md",
+    "inspiration/Orchestrion/docs/dd-trace-go/custom-trace.md",
+    "inspiration/Orchestrion/docs/dd-trace-go/features.md",
+    "inspiration/Orchestrion/docs/dd-trace-go/v2",
+    "inspiration/Orchestrion/docs/dd-trace-go/_index.md",
+    "inspiration/Orchestrion/contributing/aspects/guidelines.md",
+    "inspiration/Orchestrion/contributing/aspects/code-templates.md",
+    "inspiration/Orchestrion/contributing/aspects/_index.md",
+    "inspiration/Orchestrion/docs/uninstalling.md",
+    "inspiration/Orchestrion/docs/troubleshooting.md",
+    "inspiration/Orchestrion/docs/getting-started.md",
+    "inspiration/Orchestrion/docs/dd-trace-go",
+    "inspiration/Orchestrion/docs/configuration.md",
+    "inspiration/Orchestrion/docs/architecture.md",
+    "inspiration/Orchestrion/docs/_index.md",
+    "inspiration/Orchestrion/contributing/performance.md",
+    "inspiration/Orchestrion/contributing/introduction.md",
+    "inspiration/Orchestrion/contributing/aspects",
+    "inspiration/Orchestrion/contributing/_index.md",
+    "inspiration/Orchestrion/docs",
+    "inspiration/Orchestrion/contributing",
+    "inspiration/Orchestrion/_index.md",
+    "inspiration/Orchestrion",
+    "notes/GopherCon UK - 2025/Links.md",
+    "inspiration/GopherCon - 2023/img/orchestrion_small_9.jpg",
+    "inspiration/GopherCon - 2023/img/orchestrion_small_8.jpg",
+    "inspiration/GopherCon - 2023/img/orchestrion_small_7.png",
+    "inspiration/GopherCon - 2023/img/orchestrion_small_6.jpg",
+    "inspiration/GopherCon - 2023/img/orchestrion_small_5.jpg",
+    "inspiration/GopherCon - 2023/img/orchestrion_small_4.jpg",
+    "inspiration/GopherCon - 2023/img/orchestrion_small_37.png",
+    "inspiration/GopherCon - 2023/img/orchestrion_small_36.png",
+    "inspiration/GopherCon - 2023/img/orchestrion_small_35.png",
+    "inspiration/GopherCon - 2023/img/orchestrion_small_34.png",
+    "inspiration/GopherCon - 2023/out.md",
+    "inspiration/GopherCon - 2023/img",
+    "inspiration/GopherCon - 2023",
+    "inspiration/gc2024/toolexec-graph.mmd",
+    "inspiration/gc2024/toolexec-graph-3.mmd"
   ]
 }

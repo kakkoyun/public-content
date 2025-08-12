@@ -1,15 +1,15 @@
 {
   "port": "3000",
   "autoReload": true,
-  "exportDirectory": "/export",
+  "exportDirectory": "/media/export",
   "enableChalkboard": false,
-  "enableOverview": false,
-  "enableMenu": true,
+  "enableOverview": true,
+  "enableMenu": false,
   "enablePointer": false,
   "enableTimeBar": false,
-  "theme": "black",
-  "highlightTheme": "zenburn",
-  "transition": "slide",
+  "theme": "simple",
+  "highlightTheme": "monokai",
+  "transition": "none",
   "transitionSpeed": "default",
   "controls": true,
   "progress": true,
@@ -17,5 +17,5 @@
   "showGrid": false,
   "autoComplete": "inPreview",
   "paneMode": "split",
-  "motm": "2024-11-12T10:09:16.820Z"
+  "motm": "2025-08-07T11:13:19.293Z"
 }
