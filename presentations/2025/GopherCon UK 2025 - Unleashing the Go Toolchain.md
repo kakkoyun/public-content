@@ -33,8 +33,8 @@ tags:
 notes:
 
 - A software engineer at Datadog working on APM and observability
-- A father, husband, and a dog owner (she passed away last year)
-- I'm a geek, a nerd (D&D, Custom keyboards, rasperry pi cluster, etc.)
+- A father, husband, and a dog owner (she passed away recently)
+- I'm a geek, a nerd (D&D, custom keyboards, Raspberry Pi cluster, etc.)
 - Recently, I'm into personal knowledge management
 - Experience in **performance engineering** and **observability**.
 - Focus on **instrumenting applications** for **continuous profiling** and **runtime insights**.
@@ -46,8 +46,8 @@ notes:
 - Built **eBPF-based whole-system performance profiler**: [parca-agent](https://github.com/parca-dev/parca-agent).  
 - Contributor to foundational **observability tools** under CNCF.
 
-- A member in **OpenTelemetry Profiling** and **OpenTelemetry Go Compilte-time Instrumentation** SIG and projects.
-	- *Past:* **CNCF TAG Observability**, and **Kubernetes SIG Instrumentation**
+- A member in **OpenTelemetry Profiling** and **OpenTelemetry Go Compile-time Instrumentation** SIG and projects.
+	- *Past:* **CNCF TAG Observability** and **Kubernetes SIG Instrumentation**
 
 ---
 
@@ -56,11 +56,11 @@ notes:
 ![[dd_logo_v_white.png|400]]
 
 notes:
-- I work at datadog on APM. We want folks to be able to catch logs/metrics/traces in their code to know what’s up in their code.
+- I work at Datadog on APM. We want folks to be able to catch logs/metrics/traces in their code to know what's up in their code.
 - Datadog serves over 30,000 customers including 8 of the top 10 leading AI companies
 - We monitor billions of containers per day and collect over a hundred trillion events per day
 - Our engineering org has over 2,500 people - and we're always hiring great Go developers!
-- Our team is one the most prolific contributors to the Go runtime and toolchain outside of Google
+- Our team is one of the most prolific contributors to the Go runtime and toolchain outside of Google
 
 - Do you know this mascot has a name? It's called `Bits`. You know Datadog, bits?? 🤣
 - Pun intended. There are a lot of dog puns internally. Pun dog meme is real!
@@ -135,7 +135,7 @@ Magic in programs often seems like a great idea while you are working on it,
 but when you go back to the code later or have to debug a problem,
 it's always ten times harder to figure out what's going on and what went wrong.
 
-And these three things are pretty great, they've helped me avoid a lot of pain whenever I'm working in Go.
+And these three things are pretty great—they've helped me avoid a lot of pain whenever I'm working in Go.
 
 ---
 
@@ -153,10 +153,10 @@ I used to be a Ruby on Rails developer. I've seen the magic of Rails.
 It's a great framework. It's a great language. It's a great community.
 It's a great ecosystem. It's a great tool. It's a great everything.
 
-But, and yeah, there's always a but, when you have to debug a problem,
+But—and yeah, there's always a but—when you have to debug a problem,
 it's always ten times harder to figure out what's going on and what went wrong.
 
-Hence I evolved into a Go developer.
+Hence, I evolved into a Go developer.
 
 ---
 
@@ -166,10 +166,9 @@ Hence I evolved into a Go developer.
 
 notes:
 
-But, and yeah, there's always a but, there are some downsides to the things that make Go great.
+But—and yeah, there's always a but—there are some downsides to the things that make Go great.
 
 Before I go into those downsides, let's change topics for a moment. Let's talk about distributed tracing and observability. I promise this will all make sense in a couple of minutes.
-
 
 ---
 
@@ -234,7 +233,7 @@ func main() {
 
 notes:
 
-In Go, first you need this setup code in every service. This is just the initialization - we haven't even started tracing actual functions yet.
+In Go, first you need this setup code in every service. This is just the initialization—we haven't even started tracing actual functions yet.
 
 ---
 
@@ -445,6 +444,7 @@ Manual Instrumentation
 import (
     "go.opentelemetry.io/otel"
     "go.opentelemetry.io/otel/attribute"
+    "go.opentelemetry.io/otel/codes"
 )
 
 func processOrder(ctx context.Context, orderID string) error {
@@ -769,7 +769,7 @@ Let's look at what toolexec actually is. According to the Go documentation, tool
 
 ## Simple Wrapper
 
-**First, let's just intercept the build process**
+**First, let's just intercept the build process:**
 
 notes:
 
@@ -1798,7 +1798,7 @@ The secret weapon was indeed there all along. Now you know how to wield it.
 
 <div>
 
-![[unleasing_go_toolchain_slides.png]]
+![[unleashing_go_toolchain_slides.png]]
 
 </div>
 

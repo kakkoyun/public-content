@@ -224,8 +224,13 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "9f4d56805c470156",
+  "active": "67abe04d455c5c6e",
   "lastOpenFiles": [
+    "presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md.tmp.93083.1755265996666",
+    "media/images/qr/unleashing_go_toolchain_slides.png",
+    "presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md.tmp.93083.1755265868224",
+    "presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md.tmp.93083.1755265857729",
+    "presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md.tmp.93083.1755265829752",
     "media/images/qr/unleasing_go_toolchain_slides.png",
     "media/images/gopherconuk2025/daniel_marti.png",
     "presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md",
@@ -240,9 +245,6 @@
     "resources/2025/GopherCon UK 2025 - Unleashing the Go Toolchain/examples/opentelemetry/ruby.md",
     "presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md.tmp.93917.1755240206301",
     "presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md.tmp.93917.1755240199690",
-    "presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md.tmp.93917.1755240190481",
-    "presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md.tmp.93917.1755240138252",
-    "presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md.tmp.43567.1755210204234",
     "media/images/gopherconuk2025/opentelemetry_logo.svg",
     "resources/2025/GopherCon UK 2025 - Unleashing the Go Toolchain/examples/opentelemetry/community.md",
     "resources/2025/GopherCon UK 2025 - Unleashing the Go Toolchain/examples/opentelemetry/java-agent.md",
@@ -269,7 +271,6 @@
     "system/docs/advanced-slides/examples/legday/plugin/chalkboard/img/whiteboard.png",
     "system/docs/advanced-slides/examples/legday/plugin/chalkboard/img/sponge.png",
     "system/docs/advanced-slides/examples/legday/plugin/chalkboard/img/chalk-yellow.png",
-    "system/docs/advanced-slides/examples/legday/plugin/chalkboard/img/chalk-white.png",
-    "system/docs/advanced-slides/examples/legday/plugin/chalkboard/img/chalk-red.png"
+    "system/docs/advanced-slides/examples/legday/plugin/chalkboard/img/chalk-white.png"
   ]
 }
