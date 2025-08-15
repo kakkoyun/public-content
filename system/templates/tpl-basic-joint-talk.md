@@ -1,5 +1,5 @@
 <grid drag="100 6" drop="top" align="left" pad="0 20px" style="font-size: 16px;">
- <%? title %>
+  <%? title %>
 </grid>
 
 <% content %>

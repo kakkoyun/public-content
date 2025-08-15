@@ -7,9 +7,15 @@
 <% content %>
 
 <style>
+.reveal .slides section[data-background-color="#632ca6"] h1,
+.reveal .slides section[style*="background-color: rgb(99, 44, 166)"] h1,
+.reveal .slides section[style*="background-color: #632ca6"] h1,
+.reveal .slides section[style*="background-color: #632CA6"] h1 {
+  color: white !important;
+}
 .horizontal_dotted_line{
-  border-bottom: 2px dotted white; 
-} 
+  border-bottom: 2px dotted white !important;
+}
 </style>
 
 <grid drag="94 0" drop="3 -6" class="horizontal_dotted_line">
