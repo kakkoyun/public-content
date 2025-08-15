@@ -24,11 +24,11 @@
         ]
       },
       {
-        "id": "70f4c68165c86e27",
+        "id": "101bfa9bb5d909e9",
         "type": "tabs",
         "children": [
           {
-            "id": "e241848fc0f940ef",
+            "id": "9f4d56805c470156",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
@@ -224,7 +224,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "e241848fc0f940ef",
+  "active": "9f4d56805c470156",
   "lastOpenFiles": [
     "media/images/qr/unleasing_go_toolchain_slides.png",
     "media/images/gopherconuk2025/daniel_marti.png",

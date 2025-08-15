@@ -129,10 +129,7 @@ And when you compile, you get a native binary with no dependencies
 notes:
 
 It's a non-magical language. 
-
 What do I mean by non-magical?
-
-notes:
 
 Magic in programs often seems like a great idea while you are working on it,
 but when you go back to the code later or have to debug a problem,
@@ -163,10 +160,9 @@ Hence I evolved into a Go developer.
 
 ---
 
-
 <!-- slide template="[[tpl-datadog-basic]]" -->
 
-# `There's always a "but"...` <!-- element class="fragment" -->
+# `There's always a "but"...`
 
 notes:
 
@@ -1357,11 +1353,11 @@ Most languages solve this with runtime magic - annotations, decorators, proxies.
 
 ## Real-World Example: Manual Implementation
 
-**Before AOP - A typical Go function:**
-
 ---
 
 <!-- slide template="[[tpl-datadog-basic-light]]" -->
+
+**Before AOP - A typical Go function:**
 
 ```go
 func ProcessOrder(ctx context.Context, order Order) error {
@@ -1402,9 +1398,7 @@ Look at this typical Go function. The business logic is buried under layers of c
 
 <!-- slide template="[[tpl-datadog-basic-light]]" -->
 
-## After AOP: Clean Business Logic
-
-**With toolexec transformation:**
+**After AOP: Clean Business Logic**
 
 ```go
 func ProcessOrder(ctx context.Context, order Order) error {
@@ -1822,7 +1816,7 @@ The secret weapon was indeed there all along. Now you know how to wield it.
 <div>
 
 - <i class="fab fa-github"></i> Github: [@kakkoyun](https://github.com/kakkoyun)
-- <i class="fas fa-blog"></i> Blog: <a href="https://kakkoyun.me/" target="_blank">kakkoyun.me</a>
+- <i class="fas fa-blog"></i> Blog: <a href="https://kakkoyun.me/" target="_blank">https://kakkoyun.me</a>
 - <i class="fab fa-bluesky"></i> Bluesky: <a href="https://bsky.app/profile/kakkoyun.me" target="_blank">kakkoyun.me</a>
 - <i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/kakkoyun/" target="_blank">kakkoyun</a>
 - <i class="fab fa-twitter"></i> Twitter/X: <a href="https://x.com/kakkoyun_me" target="_blank">@kakkoyun_me</a>
@@ -1845,3 +1839,168 @@ The secret weapon was indeed there all along. Now you know how to wield it.
 
 <!-- slide template="[[tpl-datadog-basic-light]]" -->
 
+# Patching the Go Runtime
+
+How Orchestrion modifies `runtime.g` for Goroutine Local Storage (GLS)
+
+---
+
+<!-- slide template="[[tpl-datadog-basic-light]]" -->
+
+**Problem:** Context propagation without `context.Context`
+- Some Go code doesn't accept context parameters
+- Need trace context in goroutine-local storage
+- Solution: Patch the runtime itself
+
+---
+
+<!-- slide template="[[tpl-datadog-basic-light]]" -->
+
+**Approach:** Modify `runtime.g` struct
+- Add new field `__dd_gls_v2 any`
+- Create accessor functions via `go:linkname`
+- Clean up on goroutine exit
+
+---
+
+<!-- slide template="[[tpl-datadog-basic-light]]" -->
+
+## YAML Configuration for Runtime Patching
+
+```yaml
+aspects:
+  - id: __dd_gls_v2
+    join-point:
+      struct-definition: runtime.g
+    advice:
+      - add-struct-field:
+          name: __dd_gls_v2
+          type: any
+      - add-blank-import: unsafe # Needed for go:linkname
+      - inject-declarations:
+          template: |-
+            //go:linkname __dd_orchestrion_gls_get __dd_orchestrion_gls_get.V2
+            var __dd_orchestrion_gls_get = func() any {
+              return getg().m.curg.__dd_gls_v2
+            }
+
+            //go:linkname __dd_orchestrion_gls_set __dd_orchestrion_gls_set.V2
+            var __dd_orchestrion_gls_set = func(val any) {
+              getg().m.curg.__dd_gls_v2 = val
+            }
+```
+
+---
+
+<!-- slide template="[[tpl-datadog-basic-light]]" -->
+
+## Goroutine Exit Cleanup
+
+```yaml [1-12|6-8]
+  - id: goexit1
+    join-point:
+      all-of:
+        - import-path: runtime
+        - function-body:
+            function:
+              - name: goexit1  # Goroutine cleanup function
+    advice:
+      - prepend-statements:
+          template: getg().__dd_gls_v2 = nil
+```
+
+---
+
+<!-- slide template="[[tpl-datadog-basic-light]]" -->
+
+## User-Space Interface
+
+**Linking to Runtime Functions**
+```go
+var (
+    getDDGLS = func() any { return nil }
+    setDDGLS = func(any) {}
+)
+
+//go:linkname __dd_orchestrion_gls_get __dd_orchestrion_gls_get.V2
+var __dd_orchestrion_gls_get func() any
+
+//go:linkname __dd_orchestrion_gls_set __dd_orchestrion_gls_set.V2
+var __dd_orchestrion_gls_set func(any)
+
+func init() {
+    if __dd_orchestrion_gls_get != nil && __dd_orchestrion_gls_set != nil {
+        getDDGLS = __dd_orchestrion_gls_get
+        setDDGLS = __dd_orchestrion_gls_set
+    }
+}
+```
+
+---
+
+<!-- slide template="[[tpl-datadog-basic-light]]" -->
+
+
+## Context Stack Implementation
+
+---
+
+<!-- slide template="[[tpl-datadog-basic-light]]" -->
+
+**Stack-Based Context Storage**
+```go
+type contextStack map[any][]any
+
+func getDDContextStack() *contextStack {
+    if gls := getDDGLS(); gls != nil {
+        return gls.(*contextStack)
+    }
+
+    newStack := &contextStack{}
+    setDDGLS(newStack)
+    return newStack
+}
+
+func (s *contextStack) Push(key, val any) {
+    (*s)[key] = append((*s)[key], val)
+}
+
+func (s *contextStack) Pop(key any) any {
+    stack := (*s)[key]
+    val := stack[len(stack)-1]
+    (*s)[key] = stack[:len(stack)-1]
+    return val
+}
+```
+
+---
+
+<!-- slide template="[[tpl-datadog-basic-light]]" -->
+
+## GLS-Aware Context
+
+```go
+type glsContext struct {
+    context.Context
+}
+
+func (g *glsContext) Value(key any) any {
+    if val := getDDContextStack().Peek(key); val != nil {
+        return val
+    }
+    return g.Context.Value(key)  // Fallback to regular context
+}
+
+func CtxWithValue(parent context.Context, key, val any) context.Context {
+    if !Enabled() {
+        return context.WithValue(parent, key, val)
+    }
+
+    getDDContextStack().Push(key, val)         // Store in GLS
+    return context.WithValue(WrapContext(parent), key, val)  // Also in context
+}
+
+func GLSPopValue(key any) any {
+    return getDDContextStack().Pop(key)
+}
+```
