@@ -1,3 +1,0 @@
-# Go - AST manipulation
-
-TODO
