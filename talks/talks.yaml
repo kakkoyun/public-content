@@ -1,0 +1,449 @@
+# Source of truth for the talks index. talks/INDEX.md is generated from this
+# file by `uv run scripts/talks.py generate` — never hand-edit INDEX.md.
+#
+# Schema: every entry requires id, title, date, tooling, visibility.
+# Everything else is optional. See AGENTS.md for field semantics.
+#
+# tooling: gslides | obsidian | marp | repo-hosted | none
+# visibility: public | internal
+
+talks:
+  - id: instrument-go-without-changing-a-single-line
+    title: Instrument Go Without Changing a Single Line
+    date: 2026-08-13
+    tooling: marp
+    visibility: public
+    blog: https://kakkoyun.me/talks/instrument-go-without-changing-a-single-line/
+    slides:
+      source: "presentations/2026/external/gophercon-uk/talks/without-a-single-line/slides/presentation.md"
+      pdf: null
+      hosted: null
+    repo: https://github.com/kakkoyun/gopherconuk-26
+    demo: https://github.com/kakkoyun/zeroins
+    resources: null
+    events:
+      - name: GopherCon UK 2026
+        url: https://www.gophercon.co.uk/schedule
+        date: 2026-08-13
+        video: https://www.youtube.com/watch?v=tidmOddZOao
+    copresenters: []
+    tags: [go, opentelemetry, auto-instrumentation, ebpf, observability]
+
+  - id: why-your-go-benchmarks-are-lying
+    title: Why Your Go Benchmarks Are Lying
+    date: 2026-08-12
+    tooling: marp
+    visibility: public
+    blog: https://kakkoyun.me/talks/why-your-go-benchmarks-are-lying/
+    slides:
+      source: "presentations/2026/external/gophercon-uk/talks/go-benchmarks-lying/slides/presentation.md"
+      pdf: null
+      hosted: null
+    repo: https://github.com/kakkoyun/gopherconuk-26
+    demo: https://github.com/kakkoyun/benchlab
+    resources: null
+    events:
+      - name: GopherCon UK 2026
+        url: https://www.gophercon.co.uk/schedule
+        date: 2026-08-12
+        video: https://www.youtube.com/watch?v=SMNflDmiYbI
+    copresenters: []
+    tags: [performance, benchmarking, observability]
+
+  - id: how-to-instrument-go-without-changing-code
+    title: How to Instrument Go Without Changing a Single Line of Code
+    date: 2026-02-01
+    tooling: marp
+    visibility: public
+    blog: https://kakkoyun.me/talks/how-to-instrument-go-without-changing-code/
+    slides:
+      source: "presentations/2026/external/fosdem-go/presentation.md"
+      pdf: null
+      hosted: null
+    repo: https://github.com/kakkoyun/fosdem-2026
+    demo: https://github.com/kakkoyun/fosdem-2026
+    resources: null
+    events:
+      - name: "FOSDEM 2026 — Go Devroom"
+        url: https://fosdem.org/2026/schedule/track/go/
+        date: 2026-02-01
+        video: https://www.youtube.com/watch?v=0TvrSebuDPk
+    copresenters: []
+    tags: [go, opentelemetry, auto-instrumentation, ebpf, observability]
+
+  - id: how-to-reliably-measure-software-performance
+    title: How to Reliably Measure Software Performance
+    date: 2026-02-01
+    tooling: marp
+    visibility: public
+    blog: https://kakkoyun.me/talks/how-to-reliably-measure-software-performance/
+    slides:
+      source: "presentations/2026/external/fosdem-software-performance/presentation.md"
+      pdf: null
+      hosted: null
+    repo: https://github.com/igoragoli/fosdem-2026-software-performance
+    demo: https://github.com/igoragoli/fosdem-2026-software-performance
+    resources: null
+    events:
+      - name: "FOSDEM 2026 — Software Performance Devroom"
+        url: https://fosdem.org/2026/schedule/track/software-performance/
+        date: 2026-02-01
+        video: https://www.youtube.com/watch?v=8211fNI_nc4
+    copresenters:
+      - name: Augusto de Oliveira
+        url: https://github.com/igoragoli
+    tags: [performance, benchmarking, observability]
+    note: >
+      Co-presenter's repo is the source of truth; our submodule
+      (fosdem-software-performance) points at kakkoyun's fork.
+
+  - id: unleashing-the-go-toolchain
+    title: Unleashing the Go Toolchain
+    date: 2025-08-14
+    tooling: obsidian
+    visibility: public
+    blog: https://kakkoyun.me/talks/unleashing-the-go-toolchain/
+    slides:
+      source: "presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md"
+      pdf: "media/export/GopherCon UK 2025 - Unleashing the Go Toolchain.pdf"
+      hosted: null
+    repo: null
+    demo: https://github.com/kakkoyun/gopherconuk25-demo
+    resources: "resources/2025/GopherCon UK 2025 - Unleashing the Go Toolchain"
+    events:
+      - name: GopherCon UK 2025
+        url: https://www.gophercon.co.uk/
+        date: 2025-08-14
+        video: https://www.youtube.com/watch?v=8Rw-fVEjihw
+    copresenters: []
+    tags: [go, toolchain, instrumentation]
+    note: >
+      DO NOT MOVE slides.source or slides.pdf — both paths are linked from the
+      live blog page as GitHub blob URLs.
+
+  - id: profiling-python-with-ebpf
+    title: "Profiling Python with eBPF: A New Frontier in Performance Analysis"
+    date: 2024-02-04
+    tooling: obsidian
+    visibility: public
+    blog: https://kakkoyun.me/talks/profiling-python-with-ebpf/
+    slides:
+      source: "presentations/2024/FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis.md"
+      pdf: null
+      hosted: "https://kakkoyun.me/notes/presentations/FOSDEM24+-+Profiling+Python+with+eBPF+-+A+New+Frontier+in+Performance+Analysis"
+    repo: null
+    demo: https://github.com/parca-dev/parca-agent
+    resources: "resources/2024/FOSDEM 2024 - Profiling Python with eBPF - A New Frontier in Performance Analysis"
+    events:
+      - name: "FOSDEM 2024 — Python Devroom"
+        url: https://archive.fosdem.org/2024/schedule/track/python-devroom/
+        date: 2024-02-04
+        video: https://www.youtube.com/watch?v=nNbU26CoMWA
+    copresenters: []
+    tags: [profiling, ebpf, python, parca, observability]
+    variant_of: null
+    note: >
+      DO NOT MOVE slides.source — linked from the live blog page as both a
+      GitHub blob URL and, via netlify.toml's /notes/* proxy, the
+      slides.hosted Obsidian-publish URL.
+      presentations/2024/Profiling Python with eBPF.md is a near-duplicate
+      variant (tpl-basic instead of tpl-polar-signals-basic, no FOSDEM logo
+      slides) with no blog page of its own — not a 20th talk entry.
+
+  - id: prometheus-updates-and-deep-dive
+    title: Prometheus Updates and Deep Dive
+    date: 2023-04-19
+    tooling: none
+    visibility: public
+    blog: https://kakkoyun.me/talks/prometheus-updates-and-deep-dive/
+    slides: none  # video only — maintainer-track session, no deck published
+    repo: null
+    demo: null
+    resources: null
+    events:
+      - name: "KubeCon + CloudNativeCon Europe 2023"
+        url: https://kccnceu2023.sched.com/event/1HzcT
+        date: 2023-04-19
+        video: https://www.youtube.com/watch?v=qQpehBEOakY
+    copresenters:
+      - name: Bryan Boreham
+        url: https://github.com/bboreham
+    tags: [prometheus, observability, monitoring, cloud-native, kubernetes]
+
+  - id: best-practices-and-pitfalls-of-instrumenting-your-cloud-native-application
+    title: Best Practices and Pitfalls of Instrumenting Your Cloud-Native Application
+    date: 2022-11-08
+    tooling: gslides
+    visibility: public
+    blog: https://kakkoyun.me/talks/best-practices-and-pitfalls-of-instrumenting-your-cloud-native-application/
+    slides:
+      source: null
+      pdf: null
+      hosted: https://docs.google.com/presentation/d/1uRyWxPGTTfn9_UnX4sWyUd5Lcf7MKg-qvi3hajFtLZI/edit?usp=sharing
+    repo: null
+    demo: null
+    resources: null
+    events:
+      - name: PromCon EU 2022
+        url: https://promcon.io/2022-munich/talks/best-practices-and-pitfalls-of-i/
+        date: 2022-11-08
+        video: https://www.youtube.com/watch?v=B6Ds2myOIRc
+    copresenters:
+      - name: Jéssica Lins
+        url: null
+    tags: [observability, instrumentation, cloud-native, prometheus]
+
+  - id: story-of-correlation-integrating-thanos-metrics
+    title: "Story of Correlation: Integrating Thanos Metrics with Observability Signals"
+    date: 2022-06-15
+    tooling: gslides
+    visibility: public
+    blog: https://kakkoyun.me/talks/story-of-correlation-integrating-thanos-metrics/
+    slides:
+      source: null
+      pdf: null
+      hosted: https://docs.google.com/presentation/d/1FvMqgD5jL5_eoUs6CgIFiBS06U0Ge1CBSXZKz26fsac/edit?usp=sharing
+    repo: null
+    demo: null
+    resources: null
+    events:
+      - name: KubeCon EU 2022
+        url: https://sched.co/ytsK
+        date: 2022-06-15
+        video: https://youtu.be/rWFb01GW0mQ
+    copresenters:
+      - name: Bartek Plotka
+        url: null
+    tags: [thanos, observability, kubernetes]
+    note: >
+      Blog frontmatter is missing the 'talks' tag (only thanos, observability,
+      kubernetes) — carried over as-is, the blog is canonical and not edited
+      here. categories:[talks] still catches it for listing purposes.
+
+  - id: ebpf-safety-first
+    title: "eBPF? Safety First!"
+    date: 2022-05-10
+    tooling: gslides
+    visibility: public
+    blog: https://kakkoyun.me/talks/ebpf-safety-first/
+    slides:
+      source: null
+      pdf: null
+      hosted: https://docs.google.com/presentation/d/1hKqxAC9aaWLPM4xwXyXuK5cp2LBAewOVqZ05qjLNnK8/edit?usp=sharing
+    repo: null
+    demo: null
+    resources: null
+    events:
+      - name: Cloud-Native eBPF Day EU 2022
+        url: https://sched.co/zrPZ
+        date: 2022-05-10
+        video: https://youtu.be/oWHQrlE2-G8
+    copresenters: []
+    tags: [ebpf, rust, go]
+
+  - id: building-a-go-profiler-using-go
+    title: Building a Go Profiler Using Go
+    date: 2022-03-20
+    tooling: gslides
+    visibility: public
+    blog: https://kakkoyun.me/talks/building-a-go-profiler-using-go/
+    slides:
+      source: null
+      pdf: null
+      hosted: https://docs.google.com/presentation/d/1VNx98laKlhRFfzY9o23N5OHpBBJnuYAmZf5l7Mr-CE0/edit?usp=sharing
+    repo: null
+    demo: https://github.com/kakkoyun/tiny-profiler
+    resources: null
+    events:
+      - name: GopherCon EU 2022
+        url: https://gophercon.eu
+        date: 2022-03-20
+        video: https://www.youtube.com/watch?v=OlHQ6gkwqyA
+    copresenters: []
+    tags: [go, profiling, ebpf]
+
+  - id: achieving-zero-instrumentation-monitoring
+    title: Achieving Zero-Instrumentation Monitoring with eBPF
+    date: 2022-02-15
+    tooling: gslides
+    visibility: public
+    blog: https://kakkoyun.me/talks/achieving-zero-instrumentation-monitoring/
+    slides:
+      source: null
+      pdf: null
+      hosted: https://docs.google.com/presentation/d/1sMxVo6PVbKxiePgZNtt58xRsvysnFXdCeeVwqLLvwzM/edit?usp=sharing
+    repo: null
+    demo: null
+    resources: null
+    events:
+      - name: PrometheusDay North America 2022
+        url: https://prometheusdayna22.sched.com/event/1AsMR
+        date: 2022-02-15
+        video: https://youtu.be/g6B9Vbr88HM
+    copresenters: []
+    tags: [ebpf, observability, prometheus]
+    note: "Blog page has no 'description' frontmatter field — carried over as-is."
+
+  - id: parca-profiling-in-the-cloud-native-era
+    title: "Parca: Profiling in the Cloud-Native Era"
+    date: 2021-09-25
+    tooling: gslides
+    visibility: public
+    blog: https://kakkoyun.me/talks/parca-profiling-in-the-cloud-native-era/
+    slides:
+      source: null
+      pdf: null
+      hosted: https://docs.google.com/presentation/d/1cPdcLLSc_OzlLOnh1vuUaTuVOFjuJ7-NFbC599Pll2I/edit?usp=sharing
+    repo: null
+    demo: https://github.com/parca-dev/parca
+    resources: null
+    events:
+      - name: KubeCon NA 2021
+        url: https://kccncna2021.sched.com/event/lV4W/conprof-profiling-in-the-cloud-native-era-matthias-loibl-polar-signals-kemal-akkoyun-red-hat
+        date: 2021-09-25
+        video: https://youtu.be/ficc6_6RYQk
+    copresenters:
+      - name: Matthias Loibl
+        url: null
+    tags: [parca, profiling, observability]
+
+  - id: upstream-first-high-scale-prometheus-ecosystem
+    title: "Upstream-First, High Scale Prometheus Ecosystem"
+    date: 2021-05-03
+    tooling: none
+    visibility: public
+    blog: https://kakkoyun.me/talks/upstream-first-high-scale-prometheus-ecosystem/
+    slides: none  # video only — sponsored keynote, no deck published
+    repo: null
+    demo: null
+    resources: null
+    events:
+      - name: PromCon Online 2021
+        url: https://promcon.io/2021-online/
+        date: 2021-05-03
+        video: https://www.youtube.com/watch?v=r0fRFH_921E
+    copresenters: []
+    tags: [prometheus, observability, monitoring, cloud-native, open-source]
+
+  - id: profiling-go-applications-in-the-cloud-native-era
+    title: Profiling Go Applications in the Cloud-Native Era
+    date: 2021-04-20
+    tooling: gslides
+    visibility: public
+    blog: https://kakkoyun.me/talks/profiling-go-applications-in-the-cloud-native-era/
+    slides:
+      source: null
+      pdf: null
+      hosted: https://docs.google.com/presentation/d/1uue-Mpyw5zSuWfe1qphyhBtrCX4TmBWhN3iMcdYlnek/edit?usp=sharing
+    repo: null
+    demo: null
+    resources: null
+    events:
+      - name: GopherCon Turkey 2021
+        url: https://gophercon.ist/#schedule
+        date: 2021-04-20
+        video: https://youtu.be/-miC_jnQ_Yk
+    copresenters: []
+    tags: [go, profiling, observability]
+
+  - id: building-observable-go-services
+    title: Building Observable Go Services
+    date: 2020-12-01
+    tooling: repo-hosted
+    visibility: public
+    blog: https://kakkoyun.me/talks/building-observable-go-services/
+    slides:
+      source: null
+      pdf: null
+      hosted: null
+    repo: https://github.com/kakkoyun/building-observable-go-services
+    demo: null
+    resources: null
+    events:
+      - name: GopherCon Turkey 2020
+        url: https://gophercon.ist/en
+        date: 2020-12-01
+        video: https://www.youtube.com/watch?v=xkLyM1Gnaus
+    copresenters: []
+    tags: [go, observability, cloud-native]
+    note: >
+      Deck is the repo (GitPitch-era tooling, now dead). Index-only by choice
+      — not submoduled, tooling will never be edited again.
+
+  - id: absorbing-thanos-infinite-powers
+    title: Absorbing Thanos Infinite Powers for Multi-Cluster Telemetry
+    date: 2020-11-10
+    tooling: gslides
+    visibility: public
+    blog: https://kakkoyun.me/talks/absorbing-thanos-infinite-powers/
+    slides:
+      source: null
+      pdf: null
+      hosted: https://docs.google.com/presentation/d/1gMBQ7wLqAae45uGOcaYex-_9s675yzgexW705D7KM1Y/edit#slide=id.ga47ea1e9a6_0_13
+    repo: null
+    demo: null
+    resources: null
+    events:
+      - name: KubeCon NA 2020
+        url: https://kccncna20.sched.com/event/ekHk/absorbing-thanos-infinite-powers-for-multi-cluster-telemetry-bartlomiej-plotka-kemal-akkoyun-red-hat-frederic-branczyk-independent
+        date: 2020-11-10
+        video: https://youtu.be/6Nx2BFyr7qQ
+    copresenters:
+      - name: Bartłomiej Płotka
+        url: null
+      - name: Frederic Branczyk
+        url: null
+    tags: [thanos, kubernetes, observability]
+
+  - id: the-zen-of-prometheus
+    title: The Zen of Prometheus
+    date: 2020-09-20
+    tooling: repo-hosted
+    visibility: public
+    blog: https://kakkoyun.me/talks/the-zen-of-prometheus/
+    slides:
+      source: null
+      pdf: null
+      hosted: https://the-zen-of-prometheus.netlify.app/
+    repo: https://github.com/kakkoyun/the-zen-of-prometheus
+    demo: null
+    resources: null
+    events:
+      - name: PromCon Online 2020
+        url: https://promcon.io/2020-online/
+        date: 2020-09-20
+        video: https://www.youtube.com/watch?v=Nqp4fjw_omU
+    copresenters: []
+    tags: [prometheus, observability]
+    note: >
+      Deck is the repo (GitPitch-era tooling, now dead) with a live netlify
+      hosted URL. Index-only by choice — not submoduled. Blog frontmatter is
+      missing the 'talks' tag — carried over as-is.
+
+  - id: are-you-testing-your-observability
+    title: Are You Testing Your Observability?
+    date: 2020-02-15
+    tooling: repo-hosted
+    visibility: public
+    blog: https://kakkoyun.me/talks/are-you-testing-your-observability/
+    slides:
+      source: null
+      pdf: null
+      hosted: https://are-you-testing-your-observability.vercel.app/
+    repo: https://github.com/kakkoyun/are-you-testing-your-observability
+    demo: null
+    resources: null
+    events:
+      - name: GoDays Berlin 2020
+        url: https://www.godays.io/conferenceday1
+        date: 2020-02-15
+        video: https://youtu.be/LU6D5cNeHks
+      - name: FOSDEM 2020
+        url: https://archive.fosdem.org/2020/schedule/event/testing_observability/
+        date: 2020-02-15
+        video: https://www.youtube.com/watch?v=-jF4nWfrY3w
+    copresenters: []
+    tags: [observability, go, testing]
+    note: >
+      Deck is the repo (GitPitch-era tooling, now dead) with a live vercel
+      hosted URL. Index-only by choice — not submoduled.
