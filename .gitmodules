@@ -1,0 +1,20 @@
+[submodule "presentations/2026/external/gophercon-uk"]
+	path = presentations/2026/external/gophercon-uk
+	url = https://github.com/kakkoyun/gopherconuk-26.git
+	branch = main
+[submodule "presentations/2026/external/fosdem-go"]
+	path = presentations/2026/external/fosdem-go
+	url = https://github.com/kakkoyun/fosdem-2026.git
+	branch = main
+[submodule "presentations/2026/external/fosdem-software-performance"]
+	path = presentations/2026/external/fosdem-software-performance
+	url = https://github.com/kakkoyun/fosdem-2026-software-performance.git
+	branch = main
+[submodule "presentations/2026/external/otel-collector-deep-dive"]
+	path = presentations/2026/external/otel-collector-deep-dive
+	url = https://github.com/kakkoyun/presentation-otel-collector-deep-dive.git
+	branch = main
+[submodule "presentations/2026/external/otel-collector-contribution-walkthrough"]
+	path = presentations/2026/external/otel-collector-contribution-walkthrough
+	url = https://github.com/kakkoyun/otel-collector-contribution-walkthrough.git
+	branch = main
