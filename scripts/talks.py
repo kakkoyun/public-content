@@ -74,10 +74,19 @@ def repo_relative_paths(talk: dict) -> list[tuple[str, str]]:
     return out
 
 
-def fmt_link(label: str, url: str | None) -> str:
+def index_link_target(path: str) -> str:
+    """talks/INDEX.md lives one directory below the repo root, so a
+    repo-relative path needs a '../' prefix to resolve; a URL is used as-is."""
+    if re.match(r"^[a-z]+://", path):
+        return path
+    return f"../{path}"
+
+
+def fmt_link(label: str, url: str | None, *, relative: bool = False) -> str:
     if not url:
         return "—"
-    return f"[{label}]({url})"
+    target = index_link_target(url) if relative else url
+    return f"[{label}]({target})"
 
 
 def generate() -> None:
@@ -111,8 +120,8 @@ def generate() -> None:
             lines.append("|---|---|---|---|---|---|---|---|")
 
         events = talk.get("events") or []
-        event_name = events[0]["name"] if events else "—"
-        video = events[0].get("video") if events else None
+        event_name = ", ".join(e["name"] for e in events) if events else "—"
+        videos = [e["video"] for e in events if e.get("video")]
 
         slides = talk.get("slides")
         if slides == "none" or slides is None:
@@ -123,9 +132,9 @@ def generate() -> None:
             pdf = slides.get("pdf")
             cell_parts = []
             if source:
-                cell_parts.append(fmt_link("source", source))
+                cell_parts.append(fmt_link("source", source, relative=True))
             if pdf:
-                cell_parts.append(fmt_link("pdf", pdf))
+                cell_parts.append(fmt_link("pdf", pdf, relative=True))
             if hosted:
                 cell_parts.append(fmt_link("hosted", hosted))
             slides_cell = ", ".join(cell_parts) if cell_parts else "—"
@@ -136,7 +145,7 @@ def generate() -> None:
 
         tooling_label = TOOLING_LABELS.get(talk["tooling"], talk["tooling"])
         repo_cell = fmt_link("repo", talk.get("repo")) if talk.get("repo") else "—"
-        video_cell = fmt_link("video", video) if video else "—"
+        video_cell = ", ".join(fmt_link("video", v) for v in videos) if videos else "—"
         blog_cell = fmt_link("blog", blog) if blog else "—"
 
         lines.append(
@@ -175,7 +184,10 @@ def check() -> int:
             errors.append(f"{tid}: visibility 'public' not allowed in private-content")
 
         for label, rel_path in repo_relative_paths(talk):
-            if not (REPO_ROOT / rel_path).exists():
+            candidate = (REPO_ROOT / rel_path).resolve()
+            if REPO_ROOT.resolve() not in (candidate, *candidate.parents):
+                errors.append(f"{tid}: {label} path escapes repo root: {rel_path}")
+            elif not candidate.exists():
                 errors.append(f"{tid}: {label} path does not exist: {rel_path}")
 
         if not talk.get("blog") and talk.get("visibility") == "public":
