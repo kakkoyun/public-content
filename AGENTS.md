@@ -16,9 +16,9 @@ Company-internal talks live in the sibling private repo, `private-content`
 
 ## Do not move these paths
 
-Two files are linked from live blog pages as GitHub blob URLs, byte-identical
-including the URL-encoded spaces. Renaming or moving either breaks a published
-page:
+Three files are linked from live blog pages as GitHub blob URLs, byte-identical
+including the URL-encoded spaces. Renaming or moving any of them breaks a
+published page:
 
 - `presentations/2025/GopherCon UK 2025 - Unleashing the Go Toolchain.md`
 - `media/export/GopherCon UK 2025 - Unleashing the Go Toolchain.pdf`
@@ -68,8 +68,8 @@ pointer here (`git submodule update --remote <path>` or a manual `git add
 1. Edit `talks/talks.yaml` — add one entry per talk-at-an-event (a talk given
    at two events is two entries; a submodule holding two talks is one
    submodule referenced by two entries).
-2. Run `uv run scripts/talks.py check` — fixes duplicate ids, bad dates,
-   dangling paths, and submodules with no matching entry.
+2. Run `uv run scripts/talks.py check` — reports (does not fix) duplicate
+   ids, bad dates, dangling paths, and submodules with no matching entry.
 3. Run `uv run scripts/talks.py generate` — rewrites `talks/INDEX.md`.
 4. Commit `talks.yaml` and `talks/INDEX.md` together.
 
