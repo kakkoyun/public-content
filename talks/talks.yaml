@@ -97,6 +97,58 @@ talks:
       Co-presenter's repo is the source of truth; our submodule
       (fosdem-software-performance) points at kakkoyun's fork.
 
+  - id: otel-collector-contribution-walkthrough
+    title: "Navigating the Collector: A Contributor's Field Guide"
+    date: 2026-05-28
+    tooling: marp
+    visibility: public
+    blog: null
+    slides:
+      source: "presentations/2026/external/otel-collector-contribution-walkthrough/presentation.md"
+      pdf: null
+      hosted: null
+    repo: https://github.com/kakkoyun/otel-collector-contribution-walkthrough
+    demo: null
+    resources: null
+    events:
+      - name: Bloomberg "Sustaining OpenTelemetry" Mentorship Program
+        url: null
+        date: 2026-05-28
+        video: null
+    copresenters: []
+    tags: [opentelemetry, collector, open-source, mentorship]
+    note: >
+      No blog page — internal-facing OSS community talk. Follow-up to
+      otel-collector-deep-dive for the same mentorship cohort. Date is the
+      submodule's "after the show" commit (2026-05-28); the deck's own README
+      labels the cohort "June 2026", which this note flags as a discrepancy
+      rather than silently resolving.
+
+  - id: otel-collector-deep-dive
+    title: "The OpenTelemetry Collector: A Deep Dive"
+    date: 2026-04-16
+    tooling: marp
+    visibility: public
+    blog: null
+    slides:
+      source: "presentations/2026/external/otel-collector-deep-dive/presentation.md"
+      pdf: null
+      hosted: null
+    repo: https://github.com/kakkoyun/presentation-otel-collector-deep-dive
+    demo: null
+    resources: null
+    events:
+      - name: Bloomberg "Sustaining OpenTelemetry" Mentorship Program
+        url: null
+        date: 2026-04-16
+        video: null
+    copresenters: []
+    tags: [opentelemetry, collector, open-source, mentorship]
+    note: >
+      No blog page — internal-facing OSS community talk. Date is the
+      submodule's earliest commit, consistent with the deck README's "April
+      2026" claim.
+
   - id: unleashing-the-go-toolchain
     title: Unleashing the Go Toolchain
     date: 2025-08-14
@@ -195,7 +247,7 @@ talks:
 
   - id: story-of-correlation-integrating-thanos-metrics
     title: "Story of Correlation: Integrating Thanos Metrics with Observability Signals"
-    date: 2022-06-15
+    date: 2022-05-20
     tooling: gslides
     visibility: public
     blog: https://kakkoyun.me/talks/story-of-correlation-integrating-thanos-metrics/
@@ -209,7 +261,7 @@ talks:
     events:
       - name: KubeCon EU 2022
         url: https://sched.co/ytsK
-        date: 2022-06-15
+        date: 2022-05-20
         video: https://youtu.be/rWFb01GW0mQ
     copresenters:
       - name: Bartek Plotka
@@ -222,7 +274,7 @@ talks:
 
   - id: ebpf-safety-first
     title: "eBPF? Safety First!"
-    date: 2022-05-10
+    date: 2022-05-16
     tooling: gslides
     visibility: public
     blog: https://kakkoyun.me/talks/ebpf-safety-first/
@@ -236,14 +288,14 @@ talks:
     events:
       - name: Cloud-Native eBPF Day EU 2022
         url: https://sched.co/zrPZ
-        date: 2022-05-10
+        date: 2022-05-16
         video: https://youtu.be/oWHQrlE2-G8
     copresenters: []
     tags: [ebpf, rust, go]
 
   - id: building-a-go-profiler-using-go
     title: Building a Go Profiler Using Go
-    date: 2022-03-20
+    date: 2022-07-29
     tooling: gslides
     visibility: public
     blog: https://kakkoyun.me/talks/building-a-go-profiler-using-go/
@@ -257,14 +309,20 @@ talks:
     events:
       - name: GopherCon EU 2022
         url: https://gophercon.eu
-        date: 2022-03-20
+        date: 2022-07-29
         video: https://www.youtube.com/watch?v=OlHQ6gkwqyA
     copresenters: []
     tags: [go, profiling, ebpf]
+    note: >
+      Blog lists 2022-03-20, but GopherCon Europe 2022 ran 2022-07-28..31 in
+      Berlin (golang wiki, papercall, official conference site all agree) —
+      March is not a possible date for this event. Corrected to 2022-07-29,
+      the first main-conference day per papercall's day listing; the exact
+      day within the window is unconfirmed (no surviving per-talk schedule).
 
   - id: achieving-zero-instrumentation-monitoring
     title: Achieving Zero-Instrumentation Monitoring with eBPF
-    date: 2022-02-15
+    date: 2022-10-25
     tooling: gslides
     visibility: public
     blog: https://kakkoyun.me/talks/achieving-zero-instrumentation-monitoring/
@@ -278,7 +336,7 @@ talks:
     events:
       - name: PrometheusDay North America 2022
         url: https://prometheusdayna22.sched.com/event/1AsMR
-        date: 2022-02-15
+        date: 2022-10-25
         video: https://youtu.be/g6B9Vbr88HM
     copresenters: []
     tags: [ebpf, observability, prometheus]
@@ -286,7 +344,7 @@ talks:
 
   - id: parca-profiling-in-the-cloud-native-era
     title: "Parca: Profiling in the Cloud-Native Era"
-    date: 2021-09-25
+    date: 2021-10-15
     tooling: gslides
     visibility: public
     blog: https://kakkoyun.me/talks/parca-profiling-in-the-cloud-native-era/
@@ -300,7 +358,7 @@ talks:
     events:
       - name: KubeCon NA 2021
         url: https://kccncna2021.sched.com/event/lV4W/conprof-profiling-in-the-cloud-native-era-matthias-loibl-polar-signals-kemal-akkoyun-red-hat
-        date: 2021-09-25
+        date: 2021-10-15
         video: https://youtu.be/ficc6_6RYQk
     copresenters:
       - name: Matthias Loibl
@@ -327,7 +385,7 @@ talks:
 
   - id: profiling-go-applications-in-the-cloud-native-era
     title: Profiling Go Applications in the Cloud-Native Era
-    date: 2021-04-20
+    date: 2021-12-18
     tooling: gslides
     visibility: public
     blog: https://kakkoyun.me/talks/profiling-go-applications-in-the-cloud-native-era/
@@ -341,14 +399,14 @@ talks:
     events:
       - name: GopherCon Turkey 2021
         url: https://gophercon.ist/#schedule
-        date: 2021-04-20
+        date: 2021-12-18
         video: https://youtu.be/-miC_jnQ_Yk
     copresenters: []
     tags: [go, profiling, observability]
 
   - id: building-observable-go-services
     title: Building Observable Go Services
-    date: 2020-12-01
+    date: 2020-07-25
     tooling: repo-hosted
     visibility: public
     blog: https://kakkoyun.me/talks/building-observable-go-services/
@@ -362,17 +420,20 @@ talks:
     events:
       - name: GopherCon Turkey 2020
         url: https://gophercon.ist/en
-        date: 2020-12-01
+        date: 2020-07-25
         video: https://www.youtube.com/watch?v=xkLyM1Gnaus
     copresenters: []
     tags: [go, observability, cloud-native]
     note: >
       Deck is the repo (GitPitch-era tooling, now dead). Index-only by choice
-      — not submoduled, tooling will never be edited again.
+      — not submoduled, tooling will never be edited again. Date corrected:
+      GopherCon Turkey 2020 (online) ran 2020-07-25, not December — the blog's
+      original 2020-12-01 conflated this with the 2021 edition, which moved to
+      December.
 
   - id: absorbing-thanos-infinite-powers
     title: Absorbing Thanos Infinite Powers for Multi-Cluster Telemetry
-    date: 2020-11-10
+    date: 2020-11-19
     tooling: gslides
     visibility: public
     blog: https://kakkoyun.me/talks/absorbing-thanos-infinite-powers/
@@ -386,7 +447,7 @@ talks:
     events:
       - name: KubeCon NA 2020
         url: https://kccncna20.sched.com/event/ekHk/absorbing-thanos-infinite-powers-for-multi-cluster-telemetry-bartlomiej-plotka-kemal-akkoyun-red-hat-frederic-branczyk-independent
-        date: 2020-11-10
+        date: 2020-11-19
         video: https://youtu.be/6Nx2BFyr7qQ
     copresenters:
       - name: Bartłomiej Płotka
@@ -397,7 +458,7 @@ talks:
 
   - id: the-zen-of-prometheus
     title: The Zen of Prometheus
-    date: 2020-09-20
+    date: 2020-07-14
     tooling: repo-hosted
     visibility: public
     blog: https://kakkoyun.me/talks/the-zen-of-prometheus/
@@ -411,7 +472,7 @@ talks:
     events:
       - name: PromCon Online 2020
         url: https://promcon.io/2020-online/
-        date: 2020-09-20
+        date: 2020-07-14
         video: https://www.youtube.com/watch?v=Nqp4fjw_omU
     copresenters: []
     tags: [prometheus, observability]
@@ -422,7 +483,7 @@ talks:
 
   - id: are-you-testing-your-observability
     title: Are You Testing Your Observability?
-    date: 2020-02-15
+    date: 2020-01-22
     tooling: repo-hosted
     visibility: public
     blog: https://kakkoyun.me/talks/are-you-testing-your-observability/
@@ -436,14 +497,20 @@ talks:
     events:
       - name: GoDays Berlin 2020
         url: https://www.godays.io/conferenceday1
-        date: 2020-02-15
+        date: 2020-01-22
         video: https://youtu.be/LU6D5cNeHks
       - name: FOSDEM 2020
         url: https://archive.fosdem.org/2020/schedule/event/testing_observability/
-        date: 2020-02-15
+        date: 2020-02-02
         video: https://www.youtube.com/watch?v=-jF4nWfrY3w
-    copresenters: []
+    copresenters:
+      - name: Bartłomiej Płotka
+        url: null
     tags: [observability, go, testing]
     note: >
       Deck is the repo (GitPitch-era tooling, now dead) with a live vercel
-      hosted URL. Index-only by choice — not submoduled.
+      hosted URL. Index-only by choice — not submoduled. Dates corrected:
+      GoDays Berlin 2020 ran 2020-01-21..23 (main talks on 22-23), FOSDEM 2020
+      ran 2020-02-01..02 (this session on 02-02 per the FOSDEM archive) — both
+      were wrongly recorded as a shared 2020-02-15. Kept as one entry with two
+      dated events (per the blog's single slug) rather than split into two ids.
