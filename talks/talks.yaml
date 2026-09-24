@@ -8,6 +8,31 @@
 # visibility: public | internal
 
 talks:
+  - id: under-the-hood-of-compile-time-instrumentation-for-go
+    title: Under the Hood of Compile-Time Instrumentation for Go
+    date: 2026-09-24
+    tooling: marp
+    visibility: public
+    blog: null
+    slides:
+      source: "presentations/2026/external/otel-night-berlin/presentation.md"
+      pdf: "presentations/2026/external/otel-night-berlin/presentation.pdf"
+      hosted: null
+    repo: https://github.com/kakkoyun/otel-night-berlin-2026
+    demo: https://github.com/kakkoyun/otel-night-berlin-2026/tree/main/demo
+    resources: null
+    events:
+      - name: "OTel Night Berlin v2026.09: Go Compile-Time Instrumentation"
+        url: https://ocgroups.dev/cncf/group/7qtkpm8/event/24fkh4j
+        date: 2026-09-24
+        video: null
+    copresenters: []
+    tags: [go, opentelemetry, otelc, compile-time, instrumentation, toolexec]
+    variant_of: unleashing-the-go-toolchain
+    note: >
+      Marp port of unleashing-the-go-toolchain for a 30-minute meetup slot;
+      Orchestrion material replaced with otelc v1.1.0. No blog page yet.
+
   - id: instrument-go-without-changing-a-single-line
     title: Instrument Go Without Changing a Single Line
     date: 2026-08-13

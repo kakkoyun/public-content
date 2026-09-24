@@ -18,3 +18,7 @@
 	path = presentations/2026/external/otel-collector-contribution-walkthrough
 	url = https://github.com/kakkoyun/otel-collector-contribution-walkthrough.git
 	branch = main
+[submodule "presentations/2026/external/otel-night-berlin"]
+	path = presentations/2026/external/otel-night-berlin
+	url = https://github.com/kakkoyun/otel-night-berlin-2026.git
+	branch = main
